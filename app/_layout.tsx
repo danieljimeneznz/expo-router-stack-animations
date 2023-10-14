@@ -47,10 +47,15 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-      </Stack>
+      <Stack
+        screenOptions={{
+          animation: "slide_from_right",
+          headerShown: false,
+          statusBarStyle: "dark",
+          statusBarColor: "#00000000",
+          statusBarTranslucent: true,
+        }}
+      />
     </ThemeProvider>
   );
 }
